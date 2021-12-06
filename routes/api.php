@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FlashcardGetController;
 use App\Http\Controllers\FlashcardAllController;
+use App\Http\Controllers\FlashcardCreateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/flashcard/{card}', FlashcardGetController::class);
 Route::get('/flashcards', [FlashcardAllController::class, 'all']);
+
+Route::post('/flashcard', [FlashcardCreateController::class, 'store'])->name('flashcard');
+
+
+// potrzebujemy endpoint ktory tworzy fiszke
+// validacja danych
+// 
